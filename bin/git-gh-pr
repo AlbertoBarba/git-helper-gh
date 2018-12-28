@@ -33,7 +33,7 @@ is_git_repo
 GH_API_URL="https://api.github.com"
 GH_BASE_URL="https://github.com"
 
-GH_PROJECT=$( git config --get gh.project )
+GH_PROJECT=$(git config --get remote.origin.url | sed -e "s/^git@github.com://" -e "s/.git$//")
 GH_TOKEN=$( git config --get gh.token )
 GH_USERNAME=$( git config --get gh.username )
 
@@ -51,14 +51,6 @@ if [ "" == "$GH_TOKEN" ]; then
     echo '    git config --add gh.token GITHUB_TOKEN'
     echo ''
     echo 'You can get token on https://github.com/settings/tokens'
-    echo ''
-    exit 1
-fi
-
-if [ "" == "$GH_PROJECT" ]; then
-    echo 'Configure your github project name with'
-    echo ''
-    echo '    git config --add gh.project PROJECT/NAME'
     echo ''
     exit 1
 fi

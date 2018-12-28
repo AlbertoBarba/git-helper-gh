@@ -14,7 +14,7 @@ is_git_repo
 
 # Extract some basic infos
 GH_API_URL="https://api.github.com"
-GH_PROJECT=$( git config --get gh.project )
+GH_PROJECT=$(git config --get remote.origin.url | sed -e "s/^git@github.com://" -e "s/.git$//")
 GH_TOKEN=$( git config --get gh.token )
 
 if [ "" == "$GH_TOKEN" ]; then
