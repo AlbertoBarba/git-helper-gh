@@ -1,7 +1,7 @@
 class GitHelperGh < Formula
   desc "Git helper for GitHub"
-  homepage "https://github.com/mavimo/git-helper-gh"
-  url "https://github.com/mavimo/git-helper-gh/archive/master.zip"
+  homepage "https://github.com/AlbertoBarba/git-helper-gh"
+  url "https://github.com/AlbertoBarba/git-helper-gh/archive/master.zip"
   version "0.0.4"
   # sha256 ""
 
